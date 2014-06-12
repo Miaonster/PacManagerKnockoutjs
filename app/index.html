@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PacManager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.1.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="search-bar">
+    <input data-bind="event: { keyup: handleInput }" class="search" type="input" placeholder="Type here, for example: google">
+    <i class="fa fa-plus icon"></i>
+    <i class="file fa fa-sun-o"></i>
+  </div>
+
+  <ul class="pac-list js-pac-list" data-bind="foreach: domains">
+    <li data-bind="visible: show"><span data-bind="text: domain"></span><i data-bind="click: $root.rm" class="icon-rm fa fa-times"></i>
+  </ul>
+
+  <script src="lib/sea/sea.js"></script>
+  <script src="lib/jquery/jquery-2.0.3.js"></script>
+  <script src="lib/underscore/underscore.js"></script>
+  <script src="lib/string_score/string_score.js"></script>
+  <script src="bower_components/knockoutjs/dist/knockout.js"></script>
+
+  <script>
+    seajs.use('./js/init.js');
+    seajs.config({
+      base: './js/',
+    });
+  </script>
+</body>
+</html>
